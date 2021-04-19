@@ -1,3 +1,5 @@
+-- Final Project for COMP424
+
 # pentago_twist
 Pentago-Twist falls into the Moku family of games. Other popular games in this category include Tic-Tac-Toe and Connect-4, although Pentago-Twist has significantly more complexity. The biggest difference in
 Pentago-Twist is that the board is divided into quadrants, which can be flipped or rotate 90 degree right during the game.
