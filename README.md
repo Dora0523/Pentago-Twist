@@ -1,8 +1,4 @@
 # pentago_twist
-
-![](https://github.com/SaminYeasar/pentago_twist/blob/main/image/game.gif)
-
-
 Pentago-Twist falls into the Moku family of games. Other popular games in this category include Tic-Tac-Toe and Connect-4, although Pentago-Twist has significantly more complexity. The biggest difference in
 Pentago-Twist is that the board is divided into quadrants, which can be flipped or rotate 90 degree right during the game.
 
@@ -19,7 +15,7 @@ Moves consist of two phases: placing and rotating/flipping. On a given player's 
 complete move therefore consists of placing a piece, then rotating/flipping.
 
 ## Strategy
-Allowing quadrants to be flipped/rotated introduces significant complexity and your AI agent will need to contend with this high branching complexity. Since quadrants can be flipped/rotated, blocking an opponent's row is not as easy as simply placing an adjacent piece. A good AI agent might consider balancing seeking to win with preventing their opponent from achieving the same.
+This program attempts increase the winning rate of AI agent by applying the concept of Monte-Carlo Tree Search (MCTs). The algorithm picks the next best move according to the UCT score calculated during exploration and random simulations. The algorithm set the searching time constraint to 2s but a better move could be achieved by extending the allowed search time.
 
 ---
 
@@ -30,7 +26,7 @@ Allowing quadrants to be flipped/rotated introduces significant complexity and y
     | --- boardgame (Package for implementing boardgames, logging, GUI, and server TCP protocol, can be ignored for this project)
     | --- student_player (Package containing your agent)
     |      | --- StudentPlayer.java (The class you will implement your AI within)
-    |      | --- MyTools.java (Placeholder for any extra code you may need)} \nonumber 
+    |      | --- Node.java (Helper function to build boardState node)
     | --- pentago_swap (The package implementing all game logic)
     |      | --- PentagoBoardPanel.java (Implements the GUI, can be ignored)
     |      | --- PentagoBoard.java (Used for server logic, can be ignored)
