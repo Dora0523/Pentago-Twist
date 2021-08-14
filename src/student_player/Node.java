@@ -301,36 +301,30 @@ public static Move MCT(PentagoBoardState pbs,long timeCost) {
 	//*************************************
 	//explore nodes within time constraint
 	
-	 while (!root.getState().gameOver()) {
-
-		//check time
-		if((System.currentTimeMillis())>=time) {
-			break;
-		}
 		
-		/******* SELECTION */
+	/******* SELECTION */
 
-		//select node by tree policy
-		nodeSelect = selection(root);
+	//select node by tree policy
+	nodeSelect = selection(root);
 		
 
-		/******** EXPANSION */
+	/******** EXPANSION */
 
-		//if not gameover, expand nodeSelect 
+	//if not gameover, expand nodeSelect 
 		
 		
-		if (nodeSelect.getState().gameOver() != true) {
-			expansion(nodeSelect);
-		}
+	if (nodeSelect.getState().gameOver() != true) {
+		expansion(nodeSelect);
+	}
 		
+	while (System.currentTimeMillis() - time > 0){
+	// within time constraint, run random simulations from selected node and update UCT
 		
 		/********* SIMULATION */
 		nodeExplore = nodeSelect;
 		
 		if (nodeSelect.children.size()>0) {
-
-			nodeExplore=selectRandomChild(nodeExplore);
-			
+			nodeExplore=selectRandomChild(nodeExplore);	
 		}
 
 		//random simulation of selected node
@@ -338,9 +332,9 @@ public static Move MCT(PentagoBoardState pbs,long timeCost) {
 
 		/********** BACK PROPAGATION */
 		backPropagation(nodeExplore,score);
-
 		
 	}
+	// select child node with best UCT score
 	Node bestNode = Node.selectBestChild(root,OpponentCheck);
 
 	return bestNode.getMove();
