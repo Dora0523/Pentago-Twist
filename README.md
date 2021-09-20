@@ -5,7 +5,7 @@ Pentago-Twist falls into the Moku family of games. Other popular games in this c
 Pentago-Twist is that the board is divided into quadrants, which can be flipped or rotate 90 degree right during the game.
 
 ## Setup 
-Pentago-twist is a two-player game played on a 9x9 board, which consists of four 3x3 quadrants. To begin, the board is empty. The first player plays as white and the other plays as black.
+Pentago-twist is a two-player game played on a 6x6 board, which consists of four 3x3 quadrants. To begin, the board is empty. The first player plays as white and the other plays as black.
 
 
 ## Objective 
